@@ -1,22 +1,22 @@
+import 'package:chusan_app/models/barrel_model.dart';
+import 'package:chusan_app/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:shamo/models/product_model.dart';
-import 'package:shamo/pages/product_page.dart';
-import 'package:shamo/theme.dart';
+
 
 class ProductCard extends StatelessWidget {
-  final ProductModel product;
-  ProductCard(this.product);
+  final Merchant merchant;
+  ProductCard(this.merchant, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProductPage(product),
-          ),
-        );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => ProductPage(merchant),
+        //   ),
+        // );
       },
       child: Container(
         width: 215,
@@ -26,54 +26,39 @@ class ProductCard extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Color(0xffECEDEF),
+          color: const Color(0xffECEDEF),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Image.network(
-              product.galleries[0].url,
+              MockPhotoUrl,
               width: 215,
               height: 150,
               fit: BoxFit.cover,
             ),
             Container(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product.category.name,
-                    style: secondaryTextStyle.copyWith(
-                      fontSize: 12,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  Text(
-                    product.name,
-                    style: blackTextStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: semiBold,
-                    ),
+                    merchant.merch_name,
+                    style: AppFonts.standard(),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Text(
-                    '\$${product.price}',
-                    style: priceTextStyle.copyWith(
-                      fontSize: 14,
-                      fontWeight: medium,
-                    ),
+                    merchant.business_tagline,
+                    style: AppFonts.small(),
                   ),
                 ],
               ),

@@ -12,7 +12,7 @@ class ContentCubit extends Cubit<CourseState> {
       emit(CourseLoading());
 
       // List<MerchantModel>? merchants = ContentService().fetchContents();
-      List<MerchantModel>? merchants = [];
+      List<Merchant>? merchants = [];
 
       emit(CourseSuccess(merchants));
     } catch (error) {

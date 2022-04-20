@@ -3,7 +3,7 @@ import 'package:chusan_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class WishlistCard extends StatelessWidget {
-  final MerchantModel merchant;
+  final Merchant merchant;
   WishlistCard(this.merchant);
 
   @override

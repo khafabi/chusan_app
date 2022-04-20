@@ -4,28 +4,28 @@ import 'package:json_annotation/json_annotation.dart';
 part 'menu_model.g.dart';
 
 @JsonSerializable()
-class MenuModel extends Equatable {
+class Menu extends Equatable {
   final String name;
   final String description;
   final String price;
   final String? photo;
 
-  MenuModel({
+  Menu({
     required this.name,
     required this.description,
     required this.price,
     this.photo,
   });
 
-  factory MenuModel.fromJson(Map<String, dynamic> json) =>
-      _$MenuModelFromJson(json);
+  factory Menu.fromJson(Map<String, dynamic> json) =>
+      _$MenuFromJson(json);
 
   @override
-  fromJson(Map<String, dynamic> json) => _$MenuModelFromJson(json);
+  fromJson(Map<String, dynamic> json) => _$MenuFromJson(json);
 
   @override
   List<Object?> get props => [name, description, price, photo];
 
   @override
-  Map<String, dynamic> toJson() => _$MenuModelToJson(this);
+  Map<String, dynamic> toJson() => _$MenuToJson(this);
 }

@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'merchant_model.g.dart';
 
 @JsonSerializable()
-class MerchantModel extends Equatable {
+class Merchant extends Equatable {
   /// Int
   final int id;
   final int merch_capacity;
@@ -28,10 +28,10 @@ class MerchantModel extends Equatable {
   final String open_hour;
 
   /// Other
-  final List<MenuModel> merch_menu;
+  final List<Menu> merch_menu;
   final UserModel merch_owner;
 
-  MerchantModel({
+  Merchant({
     required this.id,
     required this.merch_capacity,
     required this.address_link,
@@ -53,11 +53,11 @@ class MerchantModel extends Equatable {
     required this.merch_owner,
   });
 
-  factory MerchantModel.fromJson(Map<String, dynamic> json) =>
-      _$MerchantModelFromJson(json);
+  factory Merchant.fromJson(Map<String, dynamic> json) =>
+      _$MerchantFromJson(json);
 
   @override
-  fromJson(Map<String, dynamic> json) => _$MerchantModelFromJson(json);
+  fromJson(Map<String, dynamic> json) => _$MerchantFromJson(json);
 
   @override
   List<Object?> get props => [
@@ -83,5 +83,5 @@ class MerchantModel extends Equatable {
       ];
 
   @override
-  Map<String, dynamic> toJson() => _$MerchantModelToJson(this);
+  Map<String, dynamic> toJson() => _$MerchantToJson(this);
 }

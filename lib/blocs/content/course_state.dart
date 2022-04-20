@@ -12,7 +12,7 @@ class CourseInitial extends CourseState {}
 class CourseLoading extends CourseState {}
 
 class CourseSuccess extends CourseState {
-  final List<MerchantModel> levels;
+  final List<Merchant> levels;
 
   const CourseSuccess(this.levels);
 

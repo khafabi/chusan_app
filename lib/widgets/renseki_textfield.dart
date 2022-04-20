@@ -1,3 +1,4 @@
+import 'package:chusan_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class RensekiTextForm extends StatelessWidget {
@@ -26,22 +27,16 @@ class RensekiTextForm extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             title,
-            style: (ScreenLayout().isMobile)
-                ? AppFonts.verySmall(
-                    fontWeight: FontWeight.bold,
-                    color: ColorConst.black1Color,
-                  )
-                : AppFonts.standard(
-                    fontWeight: FontWeight.bold,
-                    color: ColorConst.black1Color,
-                  ),
+            style: AppFonts.verySmall(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         Container(
           height: const Size.fromHeight(50).height,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: ColorConst.neutral20WhiteColor,
+            color: ColorConst.neutral20,
           ),
           child: TextFormField(
             controller: textController,
@@ -50,13 +45,8 @@ class RensekiTextForm extends StatelessWidget {
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 15),
               hintText: hintText,
-              hintStyle: (ScreenLayout().isMobile)
-                  ? AppFonts.verySmall(
-                      // fontWeight: FontWeight.bold,
-                      color: ColorConst.black1Color,
-                    )
-                  : AppFonts.standard(
-                      color: ColorConst.black1Color,
+              hintStyle: AppFonts.verySmall(
+                      fontWeight: FontWeight.bold,
                     ),
             ),
             validator: validatorFunction,

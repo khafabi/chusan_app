@@ -6,8 +6,7 @@ part of 'merchant_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MerchantModel _$MerchantModelFromJson(Map<String, dynamic> json) =>
-    MerchantModel(
+Merchant _$MerchantFromJson(Map<String, dynamic> json) => Merchant(
       id: json['id'] as int,
       merch_capacity: json['merch_capacity'] as int,
       address_link: json['address_link'] as String,
@@ -32,14 +31,13 @@ MerchantModel _$MerchantModelFromJson(Map<String, dynamic> json) =>
       open_day: json['open_day'] as String,
       open_hour: json['open_hour'] as String,
       merch_menu: (json['merch_menu'] as List<dynamic>)
-          .map((e) => MenuModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => Menu.fromJson(e as Map<String, dynamic>))
           .toList(),
       merch_owner:
           UserModel.fromJson(json['merch_owner'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MerchantModelToJson(MerchantModel instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$MerchantToJson(Merchant instance) => <String, dynamic>{
       'id': instance.id,
       'merch_capacity': instance.merch_capacity,
       'address_link': instance.address_link,
