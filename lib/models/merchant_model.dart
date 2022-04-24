@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:chusan_app/models/barrel_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -7,7 +9,6 @@ part 'merchant_model.g.dart';
 @JsonSerializable()
 class Merchant extends Equatable {
   /// Int
-  final int id;
   final int merch_capacity;
 
   /// String
@@ -31,8 +32,7 @@ class Merchant extends Equatable {
   final List<Menu> merch_menu;
   final UserModel merch_owner;
 
-  Merchant({
-    required this.id,
+  const Merchant({
     required this.merch_capacity,
     required this.address_link,
     required this.address_detail,
@@ -56,12 +56,10 @@ class Merchant extends Equatable {
   factory Merchant.fromJson(Map<String, dynamic> json) =>
       _$MerchantFromJson(json);
 
-  @override
   fromJson(Map<String, dynamic> json) => _$MerchantFromJson(json);
 
   @override
   List<Object?> get props => [
-        id,
         merch_capacity,
         address_link,
         address_detail,
@@ -82,6 +80,5 @@ class Merchant extends Equatable {
         merch_owner,
       ];
 
-  @override
   Map<String, dynamic> toJson() => _$MerchantToJson(this);
 }

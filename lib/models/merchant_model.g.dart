@@ -7,7 +7,6 @@ part of 'merchant_model.dart';
 // **************************************************************************
 
 Merchant _$MerchantFromJson(Map<String, dynamic> json) => Merchant(
-      id: json['id'] as int,
       merch_capacity: json['merch_capacity'] as int,
       address_link: json['address_link'] as String,
       address_detail: json['address_detail'] as String,
@@ -38,7 +37,6 @@ Merchant _$MerchantFromJson(Map<String, dynamic> json) => Merchant(
     );
 
 Map<String, dynamic> _$MerchantToJson(Merchant instance) => <String, dynamic>{
-      'id': instance.id,
       'merch_capacity': instance.merch_capacity,
       'address_link': instance.address_link,
       'address_detail': instance.address_detail,

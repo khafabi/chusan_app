@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -119,13 +121,13 @@ class _MainPageState extends State<MainPage> {
           return HomePage();
           break;
         case 1:
-          return const ChatPage();
+          return const ComingSoonPage();
           break;
         case 2:
           return FavoritePage();
           break;
         case 3:
-          return ProfilePage();
+          return const ComingSoonPage();
           break;
         default:
           return HomePage();
